@@ -27,7 +27,7 @@ if (
 }
 //creating variable randomId equal to 0
 var randomId = 0;
-//creating fareSearch funtion
+//creating fareSearch function
 function fareSearch() {
   //calling pickFare function
   pickFare();
@@ -199,7 +199,7 @@ var horror = 27;
 var scifi = 878;
 //setting genre equal to 0
 var genre = 0;
-//creating pickGenre function to get the value of the user's selction and setting it equal to the genre
+//creating pickGenre function to get the value of the user's selection and setting it equal to the genre
 function pickGenre() {
   if ($("#select").val() === "action") {
     genre = action;
@@ -223,7 +223,7 @@ function pickGenre() {
     genre = scifi;
   }
 }
-//creating movieSearch funtion that will search the api
+//creating movieSearch function that will search the api
 function movieSearch() {
   //calling pickGenre function that will hold the correct genre id for the api
   pickGenre();
@@ -268,10 +268,10 @@ function movieSearch() {
       $("#title").text(randomMovie.title);
       console.log(randomMovie.release_date);
       //pushing text of release date to display at #releaseDate
-      $("#releaseDate").text(randomMovie.release_date);
+      $("#releaseDate").text("Date Released: " + randomMovie.release_date);
       console.log(randomMovie.overview);
       //pushing text of synopsis to display at #synopsis
-      $("#synopsis").text(randomMovie.overview);
+      $("#synopsis").text("Synopsis: " + randomMovie.overview);
       console.log("Genre => " + randomMovie.genre_ids);
       //set movie title to local storage
       localStorage.setItem("movie", JSON.stringify(randomMovie.title));
@@ -317,6 +317,8 @@ function createMovieHistory(id, text) {
   movieHistory.attr("id", "movie-" + id);
   //display the text
   movieHistory.html(text);
+  movieHistory.attr("data-movie-text", text);
+  movieHistory.addClass("link");
   //dynamically creating delete button for each item in history
   var delMovie = $("<img>");
   delMovie.attr("data-movie-id", id);
@@ -349,7 +351,7 @@ $("#result").on("click", function (event) {
   };
   //increase recipeCount by one
   recipeCount++;
-  //call createRecipeHisstory function
+  //call createRecipeHistory function
   createRecipeHistory(recipeCount, recipeTitle);
   //push the recipeObject to the recipeHistoryArray
   recipeHistoryArray.push(recipeObject);

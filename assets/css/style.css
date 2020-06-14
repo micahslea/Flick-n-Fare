@@ -85,7 +85,7 @@
 }
 /* -----Creates the color transition effect in the second section----- */
 .display-4 {
-  font-family: "Patrick Hand", cursive;
+  font-family: "Abel", sans-serif;
   font-weight: bolder;
   text-align: center;
   font-size: 125px;
@@ -265,4 +265,20 @@ h2 {
 
 #footer-logo {
   width: 48px;
+}
+
+.carousel-inner {
+  height: 400px;
+}
+
+#top-text {
+  display: inline;
+  position: relative;
+  top: 45px;
+  font-family: "Abel", sans-serif;
+  font-weight: bolder;
+}
+
+.primary-header {
+  background-color: rgba(76, 125, 230, 0.438);
 }
